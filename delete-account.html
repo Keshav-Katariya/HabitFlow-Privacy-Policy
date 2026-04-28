@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Flow — Delete Account</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:  #4F5FCF;
+      --accent2: #7C3AED;
+      --danger:  #dc2626;
+      --bg:      #f7f7fb;
+      --surface: #ffffff;
+      --text:    #1a1a2e;
+      --muted:   #6b7280;
+      --border:  #e5e7eb;
+      --radius:  14px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: 20px;
+      padding: 40px 36px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .logo .icon { font-size: 44px; display: block; margin-bottom: 8px; }
+    .logo h1 { font-size: 20px; font-weight: 800; color: var(--text); }
+    .logo p { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+    /* ── In-app banner ── */
+    .inapp-banner {
+      background: linear-gradient(135deg, rgba(79,95,207,0.08), rgba(124,58,237,0.08));
+      border: 1px solid rgba(79,95,207,0.2);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .inapp-banner .bi { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+    .inapp-banner .content { flex: 1; }
+    .inapp-banner .content strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .inapp-banner .content p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .inapp-banner .content code {
+      background: rgba(79,95,207,0.1);
+      color: var(--accent);
+      font-size: 12px;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Form ── */
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    input, textarea {
+      width: 100%;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
+      transition: border-color 0.15s;
+      margin-bottom: 16px;
+    }
+    input:focus, textarea:focus { border-color: var(--accent); background: #fff; }
+    textarea { resize: vertical; min-height: 90px; }
+
+    .field { margin-bottom: 4px; }
+
+    /* ── Warning ── */
+    .warning {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #92400e;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    /* ── Button ── */
+    .btn-danger {
+      width: 100%;
+      padding: 14px;
+      background: var(--danger);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      font-family: inherit;
+    }
+    .btn-danger:hover { opacity: 0.88; }
+    .btn-danger:active { opacity: 0.75; }
+
+    /* ── Success state ── */
+    .success {
+      display: none;
+      text-align: center;
+      padding: 12px 0 4px;
+    }
+    .success .check { font-size: 48px; margin-bottom: 12px; display: block; }
+    .success h2 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .success p { font-size: 14px; color: var(--muted); }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 480px) {
+      .card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="logo">
+    <span class="icon">🌊</span>
+    <h1>Habit Flow</h1>
+    <p>Account Deletion Request</p>
+  </div>
+
+  <!-- Preferred: in-app -->
+  <div class="inapp-banner">
+    <span class="bi">📱</span>
+    <div class="content">
+      <strong>Easiest: Delete directly in the app</strong>
+      <p>Open Habit Flow → <code>Settings</code> → <code>Account &amp; Security</code> → <code>Delete Account</code>. Your data will be erased automatically after a 30-day grace period.</p>
+    </div>
+  </div>
+
+  <div class="divider">or request by email</div>
+
+  <!-- Form -->
+  <div id="form-section">
+    <div class="warning">
+      ⚠️ Deletion is <strong>permanent and irreversible</strong>. All your habits, streaks, mood logs, and account data will be erased and cannot be recovered.
+    </div>
+
+    <div class="field">
+      <label for="email">Email address linked to your account</label>
+      <input type="email" id="email" placeholder="you@example.com" required />
+    </div>
+
+    <div class="field">
+      <label for="reason">Reason for deletion (optional)</label>
+      <textarea id="reason" placeholder="Let us know why you're leaving (optional)…"></textarea>
+    </div>
+
+    <button class="btn-danger" onclick="submitRequest()">
+      Request Account Deletion
+    </button>
+  </div>
+
+  <!-- Success -->
+  <div class="success" id="success-section">
+    <span class="check">✅</span>
+    <h2>Request Received</h2>
+    <p>We've received your deletion request for <strong id="submitted-email"></strong>.<br><br>
+    We'll process it within <strong>30 days</strong> and send a confirmation to your email. If you change your mind, sign back into the app within 30 days to cancel.</p>
+  </div>
+
+  <div class="footer">
+    <p>Questions? Email <a href="mailto:keshavkatariya2004@gmail.com">keshavkatariya2004@gmail.com</a></p>
+    <p style="margin-top:6px;"><a href="index.html">← Privacy Policy</a></p>
+  </div>
+
+</div>
+
+<script>
+  function submitRequest() {
+    const email = document.getElementById('email').value.trim();
+    const reason = document.getElementById('reason').value.trim();
+
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    // Build mailto link and open it
+    const subject = encodeURIComponent('Habit Flow — Account Deletion Request');
+    const body = encodeURIComponent(
+      `Account Deletion Request\n\nEmail: ${email}\nReason: ${reason || 'Not provided'}\n\nPlease delete my Habit Flow account and all associated data.`
+    );
+    window.location.href = `mailto:keshavkatariya2004@gmail.com?subject=${subject}&body=${body}`;
+
+    // Show success state
+    document.getElementById('form-section').style.display = 'none';
+    document.getElementById('submitted-email').textContent = email;
+    document.getElementById('success-section').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
