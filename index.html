@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Flow — Privacy Policy</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:   #4F5FCF;
+      --accent2:  #7C3AED;
+      --bg:       #f7f7fb;
+      --surface:  #ffffff;
+      --text:     #1a1a2e;
+      --muted:    #6b7280;
+      --border:   #e5e7eb;
+      --radius:   14px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0 16px 64px;
+    }
+
+    /* ── Header ── */
+    .hero {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 48px 24px 40px;
+      margin: 0 -16px 40px;
+    }
+    .hero-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .hero h1 {
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .hero .subtitle {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-top: 8px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ── Intro card ── */
+    .intro {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 2px 12px rgba(79,95,207,0.08);
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    /* ── Section ── */
+    .section {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 28px 28px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--bg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title .num {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── Subsection ── */
+    .sub {
+      margin-top: 20px;
+    }
+    .sub-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 10px;
+    }
+
+    p { font-size: 15px; color: #374151; margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Lists ── */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px;
+    }
+    ul li {
+      font-size: 14px;
+      color: #374151;
+      padding: 5px 0 5px 22px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    ul li:last-child { border-bottom: none; }
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+
+    /* ── Third-party cards ── */
+    .third-party-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .tp-card {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+    }
+    .tp-card .tp-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .tp-card p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .tp-card a {
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+    .tp-card a:hover { text-decoration: underline; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: linear-gradient(135deg, rgba(79,95,207,0.06), rgba(124,58,237,0.06));
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid rgba(79,95,207,0.15);
+      font-size: 14px;
+      color: #374151;
+      margin-top: 8px;
+    }
+    .highlight strong { color: var(--accent); }
+
+    /* ── Warning / danger ── */
+    .warn {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #92400e;
+      margin-top: 8px;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      border-radius: var(--radius);
+      padding: 28px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .contact-card h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .contact-row .label {
+      opacity: 0.75;
+      min-width: 80px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .contact-row a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 8px;
+      padding: 0 16px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Mobile ── */
+    @media (max-width: 480px) {
+      .section { padding: 20px 16px; }
+      .hero { padding: 36px 16px 32px; }
+      .third-party-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <span class="hero-icon">🌊</span>
+  <h1>Habit Flow — Privacy Policy</h1>
+  <p class="subtitle">We believe your data belongs to you.</p>
+  <span class="badge">Effective Date: April 27, 2026</span>
+</div>
+
+<div class="container">
+
+  <!-- Intro -->
+  <div class="intro">
+    Welcome to Habit Flow. This Privacy Policy explains how we collect, use, store, and protect your personal information when you use the Habit Flow mobile application. By using our app, you agree to the practices described in this policy.
+  </div>
+
+  <!-- 1. Information We Collect -->
+  <div class="section">
+    <div class="section-title"><span class="num">1</span> Information We Collect</div>
+
+    <div class="sub">
+      <div class="sub-title">1.1 Account &amp; Identity</div>
+      <ul>
+        <li>Full name</li>
+        <li>Email address</li>
+        <li>Profile photo (stored as encrypted data in our database)</li>
+        <li>Phone number (optional, only if you choose to provide it)</li>
+        <li>Gender (optional)</li>
+        <li>Date of birth (optional)</li>
+        <li>Account creation timestamp</li>
+        <li>Unique user identifier (Firebase UID)</li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <div class="sub-title">1.2 Habit &amp; App Usage Data</div>
+      <ul>
+        <li>Habit names, types, colors, schedules, and configurations</li>
+        <li>Daily habit completion records and history</li>
+        <li>Streak counts and experience points (XP)</li>
+        <li>Mood logs and journal entries</li>
+        <li>Archived habits and tasks</li>
+        <li>Progress reports and statistics</li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <div class="sub-title">1.3 Device &amp; Preference Data</div>
+      <p>We store the following locally on your device only — this data is never transmitted to our servers:</p>
+      <ul>
+        <li>Notification preferences and schedules</li>
+        <li>App appearance settings (theme, accent color, font)</li>
+        <li>Biometric authentication preference (processed locally, never transmitted)</li>
+        <li>Onboarding completion status</li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <div class="sub-title">1.4 Purchase &amp; Subscription Data</div>
+      <ul>
+        <li>Subscription status and entitlement information</li>
+        <li>Purchase history and transaction records</li>
+        <li>Your Firebase UID is linked to RevenueCat for entitlement verification</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2. How We Use -->
+  <div class="section">
+    <div class="section-title"><span class="num">2</span> How We Use Your Information</div>
+    <ul>
+      <li>Create and manage your user account</li>
+      <li>Provide cloud backup and sync of your habit data across devices (Pro feature)</li>
+      <li>Send habit reminders and notifications you have configured</li>
+      <li>Display your progress, streaks, and statistics</li>
+      <li>Process and verify subscription purchases</li>
+      <li>Restore purchases after reinstallation</li>
+      <li>Improve app performance and fix bugs</li>
+      <li>Respond to customer support requests</li>
+    </ul>
+    <div class="highlight">
+      <strong>We do NOT</strong> use your data for advertising, sell it to third parties, or use it for any purpose beyond operating and improving Habit Flow.
+    </div>
+  </div>
+
+  <!-- 3. Data Storage & Security -->
+  <div class="section">
+    <div class="section-title"><span class="num">3</span> Data Storage &amp; Security</div>
+    <p>Your data is stored in Google Firebase (Firestore), a secure cloud database. Profile photos are stored as encoded data directly in your user record. We implement industry-standard security measures including:</p>
+    <ul>
+      <li>Encrypted data transmission (HTTPS/TLS)</li>
+      <li>Firebase security rules restricting access to your own data only</li>
+      <li>Biometric authentication option for app access (processed on-device only)</li>
+    </ul>
+    <p style="margin-top:10px; font-size:13px; color:#6b7280;">While we take reasonable steps to protect your data, no method of transmission over the internet is 100% secure.</p>
+  </div>
+
+  <!-- 4. Third-Party Services -->
+  <div class="section">
+    <div class="section-title"><span class="num">4</span> Third-Party Services</div>
+    <p>Habit Flow uses the following third-party services that may independently collect data:</p>
+    <div class="third-party-grid">
+      <div class="tp-card">
+        <div class="tp-name">🔥 Firebase (Google)</div>
+        <p>Authentication, database storage, and cloud sync. May collect device identifiers and usage data.</p>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy →</a>
+      </div>
+      <div class="tp-card">
+        <div class="tp-name">🔑 Google Sign-In</div>
+        <p>If you sign in with Google, we receive your name, email, and profile photo from your Google account.</p>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy →</a>
+      </div>
+      <div class="tp-card">
+        <div class="tp-name">💳 RevenueCat</div>
+        <p>Manages subscriptions and in-app purchases. Collects purchase history, device identifiers, and app usage data.</p>
+        <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Privacy Policy →</a>
+      </div>
+      <div class="tp-card">
+        <div class="tp-name">🛒 Google Play Billing</div>
+        <p>In-app purchases are processed through Google Play Billing. We never receive or store your payment card details.</p>
+        <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Terms of Service →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Data Sharing -->
+  <div class="section">
+    <div class="section-title"><span class="num">5</span> Data Sharing</div>
+    <p>We do not sell, trade, or rent your personal information to third parties. We may share data only in the following circumstances:</p>
+    <ul>
+      <li>With service providers (Firebase, RevenueCat) strictly to operate the app</li>
+      <li>When required by law or valid legal process</li>
+      <li>To protect the rights, safety, or property of Habit Flow or its users</li>
+      <li>In connection with a merger or acquisition (you will be notified in advance)</li>
+    </ul>
+  </div>
+
+  <!-- 6. Your Rights -->
+  <div class="section">
+    <div class="section-title"><span class="num">6</span> Your Rights &amp; Choices</div>
+
+    <div class="sub">
+      <div class="sub-title">6.1 Access &amp; Correction</div>
+      <p>You can view and update your profile information at any time within the app under <strong>Settings → Personal Info</strong>.</p>
+    </div>
+
+    <div class="sub">
+      <div class="sub-title">6.2 Data Deletion</div>
+      <p>You can request account deletion at any time from within the app under <strong>Settings → Account &amp; Security → Delete Account</strong>. Upon request, your account will be deactivated and you will be signed out.</p>
+      <div class="highlight" style="margin-top:10px;">
+        <strong>30-day grace period:</strong> If you sign back in within 30 days, you can cancel the deletion and fully restore your account. After 30 days, the next time you attempt to sign in, all your personal data, habit history, and account information will be permanently and automatically deleted from our servers.
+      </div>
+      <div class="warn" style="margin-top:10px;">
+        If you never sign in again after requesting deletion, your data will be retained until you do, or until we perform periodic manual cleanups of inactive accounts. For immediate manual deletion, contact us at <a href="mailto:keshavkatariya2004@gmail.com" style="color:#92400e;">keshavkatariya2004@gmail.com</a>.
+      </div>
+    </div>
+
+    <div class="sub">
+      <div class="sub-title">6.3 Notifications</div>
+      <p>You can disable all notifications at any time through the app's notification settings or your device's system settings.</p>
+    </div>
+
+    <div class="sub">
+      <div class="sub-title">6.4 Data Portability &amp; Export</div>
+      <p>You can export your data at any time through <strong>Settings → Account &amp; Security → Export My Data</strong>. Available formats:</p>
+      <ul>
+        <li><strong>JSON</strong> — full backup of all habits, history, and mood logs</li>
+        <li><strong>CSV</strong> — spreadsheet-compatible flat table</li>
+        <li><strong>PDF report</strong> — formatted summary with stats and streak highlights</li>
+      </ul>
+      <div class="highlight" style="margin-top:10px;">
+        Non-Pro users export their locally stored data. Pro users export their full cloud-synced dataset. All exports are generated on your device and shared directly — <strong>nothing is sent to our servers during export</strong>.
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Children -->
+  <div class="section">
+    <div class="section-title"><span class="num">7</span> Children's Privacy</div>
+    <p>Habit Flow is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we discover that a child under 13 has provided us with personal information, we will delete it immediately.</p>
+    <p>If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <a href="mailto:keshavkatariya2004@gmail.com">keshavkatariya2004@gmail.com</a>.</p>
+  </div>
+
+  <!-- 8. Data Retention -->
+  <div class="section">
+    <div class="section-title"><span class="num">8</span> Data Retention</div>
+    <p>We retain your personal data for as long as your account is active. When you request account deletion, your data is permanently and automatically deleted upon your next sign-in attempt after a 30-day period. During this 30-day window, you may cancel the deletion by signing back in.</p>
+    <p>If you never sign in again after requesting deletion, your data will be retained until you do, or until we perform periodic manual cleanups of inactive accounts. To request immediate deletion, contact us at <a href="mailto:keshavkatariya2004@gmail.com">keshavkatariya2004@gmail.com</a>.</p>
+    <p>We will not retain your data beyond what is required for legal or legitimate business purposes.</p>
+  </div>
+
+  <!-- 9. Changes -->
+  <div class="section">
+    <div class="section-title"><span class="num">9</span> Changes to This Policy</div>
+    <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you through the app or by email. Your continued use of Habit Flow after changes are posted constitutes your acceptance of the updated policy.</p>
+    <p>We encourage you to review this policy periodically.</p>
+  </div>
+
+  <!-- 10. Contact -->
+  <div class="contact-card">
+    <h2>10. Contact Us</h2>
+    <p style="font-size:14px; opacity:0.85; margin-bottom:18px;">If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data:</p>
+    <div class="contact-row">
+      <span class="label">Developer</span>
+      <span>Keshav Katariya (KK Apps Studio)</span>
+    </div>
+    <div class="contact-row">
+      <span class="label">App</span>
+      <span>Habit Flow</span>
+    </div>
+    <div class="contact-row">
+      <span class="label">Package</span>
+      <span>com.keshav.habitflow</span>
+    </div>
+    <div class="contact-row">
+      <span class="label">Email</span>
+      <a href="mailto:keshavkatariya2004@gmail.com">keshavkatariya2004@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 KK Apps Studio. All rights reserved.</p>
+    <p style="margin-top:6px;">Last Updated: April 27, 2026</p>
+  </footer>
+
+</div>
+</body>
+</html>
